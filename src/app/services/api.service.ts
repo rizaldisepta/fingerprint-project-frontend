@@ -7,15 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://91.108.111.50:3000/';
+  private apiUrl = 'http://91.108.111.50:3000';
 
   constructor(private http: HttpClient) {}
 
   register(email: string, fingerprint: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, { email, fingerprint });
+    return this.http.post(`${this.apiUrl}/api/register`, { email, fingerprint });
   }
 
   check(fingerprint: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/check`, { fingerprint });
+    return this.http.post(`${this.apiUrl}/api/check`, { fingerprint });
   }
 }
